@@ -104,3 +104,17 @@ Make the data more flexible by shuffling the indices of data.
     
 Splitting training data into training data and validation data.
 
+>#### **3. Visualizing **
+
+Here I choose t-distributed stochastic neighbor embedding (t-SNE) for visualizing the data.
+Like PCA, t-SNE is an useful method for dimension reduction, but also solve the problem of curse of dimensionality and crowding problem in PCA.
+More details about t-SNE, [Visualizing Data using t-SNE](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf) is recommended reading.
+
+    t_sne = TSNE(n_components=2, perplexity=30)
+    t_sne_y_val = reversed_one_hot(y_val)
+    t_sne_val = t_sne.fit_transform(X_val)
+    val_data = np.concatenate((t_sne_val, t_sne_y_val), axis=1)
+    val_data = pd.DataFrame(val_data, columns=["feature_1", "feature_2", "label"])
+    sns.FacetGrid(val_data, hue="label", size=6).map(plt.scatter, "feature_1", "feature_2", s=5).add_legend()
+
+![image](https://github.com/Andrewhuang723/Neural-network-scratch/blob/main/test_tsne.png)
