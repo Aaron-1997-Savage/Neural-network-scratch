@@ -23,7 +23,7 @@ output function will output "z", which is "weights" dot "inputs" plus "bias", "a
 ***forward_pass***: 
 
 By passing through the parameters, outputs of every hidden layer are solved
-concatenate all the outputs of each hidden layer, which return from the function "outputs". More details about the feed forward pass network, please look at page 5 of the slides "scratch.pptx"
+concatenate all the outputs of each hidden layer, which return from the function "outputs".
 
 ![image](https://github.com/Andrewhuang723/Neural-network-scratch/blob/main/forward_pass.png)
 
@@ -78,7 +78,8 @@ Predict the testing data "X_test", "y_test" with the optimized parameter "model_
 
     
 
->#### **2. Model.py**: contains reading data and data preprocessing, and last, the model training as well as prediction is carried out.
+>#### **2. Model.py**: 
+***contains reading data and data preprocessing, and last, the model training as well as prediction is carried out.***
 
 ***(1) num_images***:
     
