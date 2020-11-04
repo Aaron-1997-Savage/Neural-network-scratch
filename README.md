@@ -60,11 +60,23 @@ Slicing data into batches for training by "mini_batch". Get the initial paramete
 For each epoch in "epochs", each batch of data will passing through the feed forward network, class "Model().forward_pass()", returns predictions. Passing backward by class "Model().backpropagation()",
 and updated by gradient descent from class "Model().update()", the updated parameters is solved, iteratively, the terminal parameters are saved in the dictionary "model_para".
 Additionally, the loss and accuracy of each epoch are saved in the dictionary, "history". Same process with validation data, "X_val", "y_val".
+
+    model, history = mini_batch_training(X_train=X_train, y_train=y_train, X_val=X_val, y_val=y_val, n_hidden=structure, activation_list=act_list, batch_size=128, epochs=100)
+    
+    0/329 loss: 0.25318325  Accuracy: 0.1172
+    1/329 loss: 0.25337678  Accuracy: 0.1250
+    2/329 loss: 0.25407721  Accuracy: 0.0391
+    3/329 loss: 0.25344646  Accuracy: 0.0625
+    4/329 loss: 0.25340568  Accuracy: 0.0938
+    
     
 ***(6) predict***:
 
 Predict the testing data "X_test", "y_test" with the optimized parameter "model_para" by "mini_batch_training", outputs the prediction, loss, and accuracy: "Y_pred", "loss", "accuracy".
 
+    y_pred, loss, acc = predict(X_test=X_test, y_test=y_test, model_para=model, n_hidden=structure, activation_list=act_list)
+
+    
 
 >#### **2. Model.py**: contains reading data and data preprocessing, and last, the model training as well as prediction is carried out.
 
@@ -91,3 +103,4 @@ Make the data more flexible by shuffling the indices of data.
 ***(6) split***:
     
 Splitting training data into training data and validation data.
+
