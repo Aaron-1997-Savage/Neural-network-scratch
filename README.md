@@ -104,7 +104,7 @@ Make the data more flexible by shuffling the indices of data.
     
 Splitting training data into training data and validation data.
 
->#### **3. Visualizing **
+>#### **2. Visualize**
 
 Here I choose t-distributed stochastic neighbor embedding (t-SNE) for visualizing the data.
 Like PCA, t-SNE is an useful method for dimension reduction, but also solve the problem of curse of dimensionality and crowding problem in PCA.
